@@ -21,28 +21,78 @@ export default function Index() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:col-span-7 mb-8 md:mb-0">
-            <p className="text-sm uppercase tracking-widest text-red-600 mb-4">Командная встреча · Май 2026</p>
-            <h1 className="text-8xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
-              ИТОГИ
-              <br />
-              <span className="text-red-600">2025</span>
-            </h1>
-            <p className="text-xl max-w-xl">
-              Подводим итоги года и задаём курс на 2026. Только факты, только вперёд.
-            </p>
-          </div>
-          <div className="col-span-12 md:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square overflow-hidden">
-              <img
-                src="https://cdn.poehali.dev/projects/10d3cb11-9e90-4d48-8d62-7ed26075a384/files/3dba6cba-a097-4fab-8206-34c619ab59e3.jpg"
-                alt="Мотофристайл"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-red-600"></div>
+      {/* Hero / Slide 1 */}
+      <section className="pt-28 pb-20 px-4 md:px-8 bg-white">
+        <div className="container mx-auto">
+          <p className="text-sm uppercase tracking-widest text-red-600 mb-6">Командная встреча · Май 2026</p>
+
+          <div className="grid grid-cols-12 gap-8 items-start">
+            {/* Left: Title + image */}
+            <div className="col-span-12 md:col-span-5">
+              <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
+                ИТОГИ
+                <br />
+                <span className="text-red-600">2025</span>
+              </h1>
+              <div className="relative w-full aspect-square overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/10d3cb11-9e90-4d48-8d62-7ed26075a384/files/3dba6cba-a097-4fab-8206-34c619ab59e3.jpg"
+                  alt="Мотофристайл"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 right-0 w-16 h-16 bg-red-600"></div>
+              </div>
+            </div>
+
+            {/* Right: Stats */}
+            <div className="col-span-12 md:col-span-7 md:pt-4 space-y-10">
+
+              {/* Block 1: Events count */}
+              <div>
+                <h2 className="text-xs uppercase tracking-widest text-neutral-500 mb-5 pb-3 border-b border-black">
+                  Количество мероприятий
+                </h2>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-black text-white p-5">
+                    <div className="text-5xl font-bold text-red-600 leading-none mb-2">38</div>
+                    <div className="text-xs uppercase tracking-wide text-neutral-400">Всего мероприятий</div>
+                  </div>
+                  <div className="bg-black text-white p-5">
+                    <div className="text-5xl font-bold text-red-600 leading-none mb-2">28</div>
+                    <div className="text-xs uppercase tracking-wide text-neutral-400">В среднем на райдера</div>
+                  </div>
+                  <div className="border-2 border-black p-5">
+                    <div className="text-5xl font-bold leading-none mb-2">27</div>
+                    <div className="text-xs uppercase tracking-wide text-neutral-500">Мероприятий — Лев</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Block 2: Audience */}
+              <div>
+                <h2 className="text-xs uppercase tracking-widest text-neutral-500 mb-5 pb-3 border-b border-black">
+                  Зрители на мероприятиях
+                </h2>
+                <div className="space-y-3">
+                  {[
+                    { event: "Фестиваль Энергия РМК", audience: "83 000+", note: "зрителей в первый день" },
+                    { event: "Уличный драйв в Лужниках", audience: "70 000", note: "зрителей" },
+                    { event: "День Московского спорта (сентябрь)", audience: "200 000", note: "зрителей" },
+                    { event: "День Московского спорта (июль)", audience: "50 000", note: "зрителей" },
+                    { event: "РДЖ Арена", audience: "50 000", note: "зрителей" },
+                    { event: "Мос. Обл. тур", audience: "2 000–2 500", note: "зрителей в среднем" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between py-3 border-b border-neutral-200 group hover:border-red-600 transition-colors">
+                      <span className="text-sm font-medium">{item.event}</span>
+                      <div className="text-right">
+                        <span className="text-xl font-bold text-red-600">{item.audience}</span>
+                        <span className="text-xs text-neutral-500 block">{item.note}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

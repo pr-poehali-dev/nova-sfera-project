@@ -41,17 +41,22 @@ export default function Index() {
             <a href="#slide2" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               Обратная связь
             </a>
+            <a href="#team" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+              Команда
+            </a>
+            <a href="#2026" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+              План 2026
+            </a>
           </div>
         </div>
       </nav>
 
-      {/* Slide 1 */}
+      {/* Slide 1: Итоги 2025 */}
       <section id="slide1" className="pt-28 pb-20 px-4 md:px-8 bg-white">
         <div className="container mx-auto">
           <p className="text-sm uppercase tracking-widest text-red-600 mb-6">Командная встреча · Май 2026</p>
 
           <div className="grid grid-cols-12 gap-8 items-start">
-            {/* Left: Title + image */}
             <div className="col-span-12 md:col-span-5">
               <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
                 ИТОГИ
@@ -68,10 +73,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right: Stats */}
             <div className="col-span-12 md:col-span-7 md:pt-4 space-y-10">
-
-              {/* Block 1: Events count */}
               <div>
                 <h2 className="text-xs uppercase tracking-widest text-neutral-500 mb-5 pb-3 border-b border-black">
                   Количество мероприятий
@@ -92,7 +94,6 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Block 2: Audience */}
               <div>
                 <h2 className="text-xs uppercase tracking-widest text-neutral-500 mb-5 pb-3 border-b border-black">
                   Зрители на мероприятиях
@@ -116,13 +117,12 @@ export default function Index() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slide 2: Feedback */}
+      {/* Slide 2: Обратная связь */}
       <section id="slide2" className="py-20 px-4 md:px-8 bg-black text-white">
         <div className="container mx-auto">
           <p className="text-sm uppercase tracking-widest text-red-600 mb-4">Слайд 2</p>
@@ -150,6 +150,105 @@ export default function Index() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Slide 3: Команда */}
+      <section id="team" className="py-20 px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-5">
+              <h2 className="text-6xl font-bold tracking-tighter mb-8">КОМАНДА</h2>
+              <div className="aspect-[4/5] bg-black relative mb-8 md:mb-0 flex items-center justify-center">
+                <span className="text-white text-[120px] font-bold leading-none opacity-20">FMX</span>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-red-600"></div>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-7 md:pt-24">
+              <p className="text-xl mb-6">
+                Мы — команда, которая живёт мотофристайлом. Каждый прыжок — это результат месяцев работы, доверия и командного духа.
+              </p>
+              <p className="mb-6">
+                2025 год стал годом роста: новые высоты, новые трюки, новые партнёры. Мы доказали, что можем бороться на высшем уровне — и это только начало.
+              </p>
+              <p className="mb-6">
+                Каждый райдер команды внёс вклад в общий результат. Это не индивидуальный спорт — это командная работа от тренировок до шоу.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mt-12">
+                <div>
+                  <h3 className="text-sm uppercase tracking-widest mb-2">Ценности</h3>
+                  <ul className="space-y-2">
+                    <li>Прогресс каждый день</li>
+                    <li>Командный дух</li>
+                    <li>Безопасность</li>
+                    <li>Зрелищность</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm uppercase tracking-widest mb-2">Направления</h3>
+                  <ul className="space-y-2">
+                    <li>Соревнования FMX</li>
+                    <li>Шоу-программы</li>
+                    <li>Медиа-контент</li>
+                    <li>Работа с партнёрами</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Slide 4: План 2026 */}
+      <section id="2026" className="py-20 px-4 md:px-8 bg-red-600 text-white">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-6xl font-bold tracking-tighter mb-8">ПЛАН<br />2026</h2>
+              <p className="text-xl mb-8">Новый сезон — новые амбиции. Вот что нас ждёт впереди.</p>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl font-bold min-w-[2rem]">—</span>
+                  <div>
+                    <p className="font-bold uppercase tracking-wide mb-1">Расширение географии</p>
+                    <p className="text-white/80">Выезды на международные этапы и крупные российские фестивали</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl font-bold min-w-[2rem]">—</span>
+                  <div>
+                    <p className="font-bold uppercase tracking-wide mb-1">Новые трюки в программе</p>
+                    <p className="text-white/80">Каждый райдер добавляет минимум один сложный элемент в сезоне</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl font-bold min-w-[2rem]">—</span>
+                  <div>
+                    <p className="font-bold uppercase tracking-wide mb-1">Партнёрства и спонсоры</p>
+                    <p className="text-white/80">Активный поиск новых партнёров для роста бюджета команды</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl font-bold min-w-[2rem]">—</span>
+                  <div>
+                    <p className="font-bold uppercase tracking-wide mb-1">Медиа-стратегия</p>
+                    <p className="text-white/80">Регулярный контент, съёмки и продвижение команды в сети</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center">
+              <div className="border-2 border-white p-8">
+                <p className="text-sm uppercase tracking-widest mb-4 text-white/70">Ключевая цель 2026</p>
+                <p className="text-4xl font-bold tracking-tighter leading-tight">
+                  ВОЙТИ В ТОП-3<br />РОССИЙСКОГО<br />FMX
+                </p>
+                <div className="mt-8 pt-8 border-t border-white/30">
+                  <p className="text-white/80">Это амбициозно. Это достижимо. Мы работаем как команда — и побеждаем как команда.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

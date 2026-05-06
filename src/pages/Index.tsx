@@ -34,7 +34,7 @@ export default function Index() {
           <a href="/" className="text-xl font-bold tracking-tighter">
             MOTO<span className="text-red-600">FMX</span>
           </a>
-          <div className="flex space-x-8">
+          <div className="flex space-x-6">
             <a href="#slide1" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               Итоги 2025
             </a>
@@ -43,6 +43,9 @@ export default function Index() {
             </a>
             <a href="#team" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               Команда
+            </a>
+            <a href="#roles" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+              Роли
             </a>
             <a href="#2026" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               План 2026
@@ -199,6 +202,151 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Slides 5-7: Роли */}
+      {[
+        {
+          id: "roles",
+          number: "05",
+          title: "РУКОВОДИТЕЛЬ\nКОМАНДЫ",
+          subtitle: "Event директор — отвечает за всё",
+          goal: "Бесперебойная работа команды и связующих, прибыль",
+          subordinates: "Капитан команды, техническая группа, водители",
+          sections: [
+            {
+              name: "Мероприятия",
+              items: [
+                "Взаимодействие с заказчиками (формат, площадка, условия)",
+                "Взаимодействие с подрядчиками (аренда оборудования, хелперы, сроки)",
+                "Контроль подготовки площадки",
+                "Координация работы технической группы",
+                "Организация системы пропусков",
+                "Контроль эстетики на территории мероприятия",
+                "Формирование и фиксация общих таймингов",
+                "Бронирование гостиниц и авиабилетов",
+                "Контроль расходов",
+              ],
+            },
+            {
+              name: "Команда",
+              items: [
+                "Определение состава райдеров на мероприятия",
+                "Определение гонораров райдеров",
+                "Менеджмент команды",
+                "Выплата гонораров",
+              ],
+            },
+            {
+              name: "SMM",
+              items: [
+                "Ведение соцсетей: VK, Instagram, Telegram",
+                "Работа с видео/фото специалистами",
+              ],
+            },
+          ],
+        },
+        {
+          id: "role-captain",
+          number: "06",
+          title: "КАПИТАН\nКОМАНДЫ",
+          subtitle: "Фокус на райдерах и формате мероприятия",
+          goal: "Дружеская составляющая, развитие райдеров, безопасность",
+          subordinates: "Райдеры",
+          sections: [
+            {
+              name: "Команда",
+              items: [
+                "Развитие дружеской составляющей",
+                "Контроль годовых планов развития райдеров",
+                "Доведение информации до райдеров команды",
+                "План по тренировочным мероприятиям (подушки, сборы и т.д.)",
+              ],
+            },
+            {
+              name: "Мероприятия",
+              items: [
+                "Контроль присутствия райдеров на площадке",
+                "Проведение брифингов",
+                "Организационная помощь Event директору",
+                "Соблюдение таймингов мероприятия",
+                "Контроль безопасности",
+              ],
+            },
+            {
+              name: "Партнёры",
+              items: [
+                "Работа с партнёрами — нужды",
+                "Контроль внешнего вида",
+              ],
+            },
+            {
+              name: "Административная",
+              items: [
+                "Планирование, подготовка и фасилитация командных встреч",
+              ],
+            },
+          ],
+        },
+        {
+          id: "role-tech",
+          number: "07",
+          title: "ТЕХНИЧЕСКИЙ\nСПЕЦИАЛИСТ",
+          subtitle: "Материальная база и порядок",
+          goal: "Исправная техническая база, порядок в клубе",
+          subordinates: "—",
+          sections: [
+            {
+              name: "Обязанности",
+              items: [
+                "Наведение и соблюдение порядка в клубе",
+                "Ревизия и закупка материальной базы",
+              ],
+            },
+          ],
+        },
+      ].map((role, roleIdx) => (
+        <section key={role.id} id={role.id} className="py-20 px-4 md:px-8 bg-white border-t-4 border-black">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-12 gap-8">
+              {/* Left */}
+              <div className="col-span-12 md:col-span-4">
+                <p className="text-sm uppercase tracking-widest text-red-600 mb-3">Роль {role.number}</p>
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6 whitespace-pre-line">
+                  {role.title}
+                </h2>
+                <p className="text-neutral-500 text-sm mb-10">{role.subtitle}</p>
+                <div className="bg-black text-white p-6 mb-4">
+                  <p className="text-xs uppercase tracking-widest text-red-600 mb-2">Главная цель</p>
+                  <p className="text-sm leading-relaxed">{role.goal}</p>
+                </div>
+                <div className="border border-black p-6">
+                  <p className="text-xs uppercase tracking-widest text-neutral-500 mb-2">В подчинении</p>
+                  <p className="text-sm font-medium">{role.subordinates}</p>
+                </div>
+              </div>
+
+              {/* Right: Responsibility sections */}
+              <div className="col-span-12 md:col-span-8 md:pl-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {role.sections.map((section, sIdx) => (
+                    <div key={sIdx} className="border-t-2 border-black pt-5">
+                      <h3 className="text-xs uppercase tracking-widest font-bold mb-4">{section.name}</h3>
+                      <ul className="space-y-2">
+                        {section.items.map((item, iIdx) => (
+                          <li key={iIdx} className="flex items-start gap-2 text-sm text-neutral-700">
+                            <span className="text-red-600 font-bold mt-0.5 shrink-0">—</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
 
       {/* Slide 4: План 2026 */}
       <section id="2026" className="py-20 px-4 md:px-8 bg-red-600 text-white">
